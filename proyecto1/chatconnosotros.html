@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat con Nosotros</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="lg12.jpeg" sizes="16x16" type="image/png">
+</head>
+<body>
+    
+    <header>
+        <style>
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
+            .logo-container {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 60px; /* Ancho del logo */
+                height: 60px; /* Alto del logo */
+                background-color: white; /* Color de fondo del círculo */
+                border: 2px solid black; /* Delineado negro */
+                border-radius: 50%; /* Para hacer el círculo */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .logo {
+                width: 80%; /* Ajustar el tamaño del logo */
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <div class="logo-container">
+            <img src="lg12.jpeg" alt="Logo" class="logo">
+        </div>
+        <button class="boton-volver" onclick="window.history.back();">Volver Atrás</button>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 20px; /* Añade un poco de padding para que no toque el borde */
+            }
+            .boton-volver {
+                padding: 15px 30px;
+                background-color: #0f1010;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 18px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: background-color 0.3s, transform 0.2s;
+                position: absolute; /* Permite posicionar el botón */
+                top: 20px; /* Distancia desde la parte superior */
+                left: 20px; /* Distancia desde la izquierda */
+            }
+            .boton-volver:hover {
+                background-color: #ce1818;
+                transform: translateY(-2px);
+            }
+            .boton-volver:active {
+                transform: translateY(0);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+        </style>
+    </header>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Chat</h2>
+            <select id="language-selector">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+        <div class="chat-box" id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+        <button id="send-btn">Enviar</button>
+    </div>
+    <style>
+        body {
+            background-image: url('');
+            background-repeat: no-repeat;
+            background-size: cover;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.chat-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #af4c4c;
+    color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.chat-box {
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.chat-box div {
+    margin: 5px 0;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #af4c4c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8a1405;
+}
+
+    </style>
+
+    <script>
+        const replies = {
+    es: {
+        "hola": "¡Hola! ¿Cómo estás?",
+        "¿cómo estás?": "Estoy bien, gracias. ¿Y tú?",
+        "adiós": "¡Adiós! Que tengas un buen día.",
+        "gracias": "¡De nada! Si necesitas algo más, aquí estoy.",
+        "por favor": "Claro, con gusto.",
+        "¿qué tal?": "Todo bien, gracias. ¿Y tú?",
+        "buenos días": "¡Buenos días! ¿Cómo va tu día?",
+        "buenas tardes": "¡Buenas tardes! ¿Qué tal va todo?",
+        "buenas noches": "¡Buenas noches! Espero que hayas tenido un buen día.",
+        "¿qué haces?": "Aquí, listo para ayudarte.",
+        "¿cuál es tu nombre?": "Soy un asistente virtual, pero puedes llamarme ChatGPT.",
+        "ayuda": "¿En qué puedo ayudarte?",
+        "¿qué puedes hacer?": "Puedo responder preguntas, proporcionar información y charlar.",
+    },
+    en: {
+        "hello": "Hello! How are you?",
+        "how are you?": "I'm good, thank you! And you?",
+        "goodbye": "Goodbye! Have a great day.",
+        "thank you": "You're welcome! If you need anything else, I'm here.",
+        "please": "Sure, with pleasure.",
+        "what's up?": "All good, thank you! And you?",
+        "good morning": "Good morning! How's your day going?",
+        "good afternoon": "Good afternoon! How's everything?",
+        "good evening": "Good evening! Hope you had a good day.",
+        "what are you doing?": "Just here, ready to help you.",
+        "what's your name?": "I'm a virtual assistant, but you can call me ChatGPT.",
+        "help": "How can I assist you?",
+        "what can you do?": "I can answer questions, provide information, and chat.",
+    }
+};
+
+let currentLanguage = 'es';
+
+document.getElementById('send-btn').addEventListener('click', sendMessage);
+document.getElementById('user-input').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
+});
+document.getElementById('language-selector').addEventListener('change', function () {
+    currentLanguage = this.value;
+});
+
+function sendMessage() {
+    const userInput = document.getElementById('user-input');
+    const userMessage = userInput.value.trim();
+
+    if (userMessage) {
+        addMessageToChat(userMessage, 'user');
+        const response = getAutoReply(userMessage.toLowerCase());
+        addMessageToChat(response, 'bot');
+        userInput.value = '';
+    }
+}
+
+function addMessageToChat(message, sender) {
+    const chatBox = document.getElementById('chat-box');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = sender;
+    messageDiv.textContent = message;
+    chatBox.appendChild(messageDiv);
+    chatBox.scrollTop = chatBox.scrollHeight; // Desplazar hacia abajo
+}
+
+function getAutoReply(message) {
+    return replies[currentLanguage][message] || (currentLanguage === 'es' ? "Lo siento, no entiendo. ¿Puedes reformularlo?" : "Sorry, I don't understand. Can you rephrase that?");
+}
+
+    </script>
+     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content {
+            flex: 1; /* Hace que el contenido ocupe todo el espacio disponible */
+            padding: 20px;
+            background-color: #eaeaea; /* Color de fondo de la página */
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333; /* Color de fondo del pie de página */
+            color: white; /* Color del texto */
+            width: 100%; /* Asegura que el pie ocupe todo el ancho */
+            position: relative;
+        }
+
+        .logo-circle {
+            width: 100px; /* Ajusta el tamaño del círculo */
+            height: 100px;
+            border-radius: 50%; /* Esto crea el círculo */
+            overflow: hidden;
+            margin: 0 auto 10px; /* Centra el círculo y añade margen inferior */
+        }
+
+        .logo-circle img {
+            width: 100%; /* Asegura que la imagen llene el círculo */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+    </div>
+
+    <div class="footer">
+        <div class="logo-circle">
+            <img src="logocolegio.png" alt="Logo de la Empresa">
+        </div>
+        <p>© 2024 Aprende Inglés Fácilmente</p>
+    </div>
+</body>
+</html>

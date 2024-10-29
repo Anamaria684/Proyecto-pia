@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="lg12.jpeg" sizes="16x16" type="image/png">
+    <title>Perfil de Usuario</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .logo-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px; /* Ancho del logo */
+            height: 60px; /* Alto del logo */
+            background-color: white; /* Color de fondo del círculo */
+            border: 2px solid black; /* Delineado negro */
+            border-radius: 50%; /* Para hacer el círculo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo {
+            width: 80%; /* Ajustar el tamaño del logo */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <img src="lg12.jpeg" alt="Logo" class="logo">
+    </div>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Cambié esto para que ocupe toda la altura de la ventana */
+            margin: 0;
+        }
+        .profile-container {
+            display: flex;
+            justify-content: space-around; /* Espacio entre las tarjetas */
+            width: 100%; /* Ocupar todo el ancho disponible */
+            max-width: 1200px; /* Limitar el ancho máximo */
+        }
+        .profile-card {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            text-align: center;
+            margin: 10px; /* Espacio entre las tarjetas */
+        }
+        .profile-card img {
+            width: 100%;
+            height: auto;
+        }
+        .profile-card .profile-info {
+            padding: 20px;
+        }
+        .profile-card .profile-info h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        .profile-card .profile-info p {
+            color: #777;
+            margin: 5px 0;
+        }
+        .profile-card .profile-info .location {
+            font-size: 14px;
+            color: #777;
+        }
+        .profile-card .profile-info .follow-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="boton-volver" onclick="window.history.back();">Volver Atrás</button>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 20px; /* Añade un poco de padding para que no toque el borde */
+            }
+            .boton-volver {
+                padding: 15px 30px;
+                background-color: #0f1010;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 18px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: background-color 0.3s, transform 0.2s;
+                position: absolute; /* Permite posicionar el botón */
+                top: 20px; /* Distancia desde la parte superior */
+                left: 20px; /* Distancia desde la izquierda */
+            }
+            .boton-volver:hover {
+                background-color: #ce1818;
+                transform: translateY(-2px);
+            }
+            .boton-volver:active {
+                transform: translateY(0);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+        </style>
+    </header>
+    <div class="profile-container">
+        <div class="profile-card">
+            <img src="71f16795-b9f9-4add-9960-c47c19138d4d.jpeg" alt="Foto de Perfil">
+            <div class="profile-info">
+                <h2>Ana María Mejía Ramos</h2>
+                <p>Cargo: Logística</p>
+                <p class="location">Medellín, Colombia</p>
+                <a href="#" class="follow-btn">Seguir</a>
+            </div>
+        </div>
+        <div class="profile-card">
+            <img src="c1.jpeg" alt="Foto de Perfil">
+            <div class="profile-info">
+                <h2>Juan Manuel Ciro Vega</h2>
+                <p>Cargo: Diseñador</p>
+                <p class="location">Medellín, Colombia</p>
+                <a href="#" class="follow-btn">Seguir</a>
+            </div>
+        </div>
+        <div class="profile-card">
+            <img src="e11.jpeg" alt="Foto de Perfil">
+            <div class="profile-info">
+                <h2>Edwin Diosa Yepes</h2>
+                <p>Cargo: Desarrollador</p>
+                <p class="location">Medellín, Colombia</p>
+                <a href="#" class="follow-btn">Seguir</a>
+            </div>
+        </div>
+    </div>
+     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content {
+            flex: 1; /* Hace que el contenido ocupe todo el espacio disponible */
+            padding: 20px;
+            background-color: #eaeaea; /* Color de fondo de la página */
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333; /* Color de fondo del pie de página */
+            color: white; /* Color del texto */
+            width: 100%; /* Asegura que el pie ocupe todo el ancho */
+            position: relative;
+        }
+
+        .logo-circle {
+            width: 100px; /* Ajusta el tamaño del círculo */
+            height: 100px;
+            border-radius: 50%; /* Esto crea el círculo */
+            overflow: hidden;
+            margin: 0 auto 10px; /* Centra el círculo y añade margen inferior */
+        }
+
+        .logo-circle img {
+            width: 100%; /* Asegura que la imagen llene el círculo */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+    </div>
+
+    <div class="footer">
+        <div class="logo-circle">
+            <img src="logocolegio.png" alt="Logo de la Empresa">
+        </div>
+        <p>© 2024 Aprende Inglés Fácilmente</p>
+    </div>
+</body>
+</html>

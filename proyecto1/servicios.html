@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="lg12.jpeg" sizes="16x16" type="image/png">
+    <title>Servicios - La Casa del Lenguaje</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Color de fondo */
+            padding: 0; /* Sin padding por defecto */
+            overflow-x: hidden; /* Evitar scroll horizontal */
+        }
+        .logo-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px; /* Ancho del logo */
+            height: 60px; /* Alto del logo */
+            background-color: white; /* Color de fondo del círculo */
+            border: 2px solid black; /* Delineado negro */
+            border-radius: 50%; /* Para hacer el círculo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo {
+            width: 80%; /* Ajustar el tamaño del logo */
+            height: auto;
+        }
+        header {
+            background-color: #af4c4c;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 14px 25px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            padding: 20px;
+        }
+        .content {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content h2 {
+            color: #333;
+        }
+        .content a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .content a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative; /* Cambiar a relativo para que el footer esté en el flujo normal */
+            width: 100%;
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .btn {
+            background-color: #adadad;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px;
+            font-size: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            display: flex;
+        }
+        .btn:hover {
+            background-color: #adadad; /* El color no cambia al pasar el ratón */
+        }
+        .btn:active {
+            transform: scale(0.95);
+        }
+        .boton-volver {
+            padding: 15px 30px;
+            background-color: #0f1010;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.2s;
+            position: absolute; /* Permite posicionar el botón */
+            top: 20px; /* Distancia desde la parte superior */
+            left: 20px; /* Distancia desde la izquierda */
+        }
+        .boton-volver:hover {
+            background-color: #ce1818;
+            transform: translateY(-2px);
+        }
+        .boton-volver:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Dos o más columnas */
+            gap: 10px; /* Espacio entre videos */
+            border: 2px solid red; /* Borde rojo */
+            padding: 10px; /* Espacio interno */
+            border-radius: 8px; /* Bordes redondeados */
+            background-color: #f9f9f9; /* Color de fondo */
+        }
+        iframe {
+            width: 100%; /* Ajusta el ancho al contenedor */
+            height: 150px; /* Altura del iframe */
+            border: none; /* Sin borde */
+        }
+        .hidden {
+            display: none; /* Clase para ocultar secciones */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <img src="lg12.jpeg" alt="Logo" class="logo">
+    </div>
+
+    <header>
+        <button class="boton-volver" onclick="window.history.back();">Volver Atrás</button>
+        <h1>Aprende Inglés Fácilmente</h1>
+    </header>
+    
+    <nav>
+        <a href="#pdf" onclick="showSection('pdf')">PDF</a>
+        <a href="#videos" onclick="showSection('videos')">Videos</a>
+    </nav>
+    
+    <div class="container">
+        <div class="content" id="pdf">
+            <details class="btn">
+                <summary>B1</summary>
+                <p>Descarga nuestro <a href="pdf1.pdf" target="_blank">PDF interactivo</a> para aprender inglés con ejercicios y ejemplos prácticos.</p>
+            </details>
+            <details class="btn">
+                <summary>B2</summary>
+                <p>Descarga nuestro <a href="pdf1.pdf" target="_blank">PDF elemental</a> para aprender inglés con ejercicios y ejemplos prácticos.</p>
+            </details>
+            <details class="btn">
+                <summary>B3</summary>
+                <p>Descarga nuestro <a href="adelantamiento_de_principiantes.pdf" target="_blank">PDF adelantamiento para principiantes</a> para aprender inglés con ejercicios y ejemplos prácticos.</p>
+            </details>
+            <details class="btn">
+                <summary>A1</summary>
+                <p>Descarga nuestro <a href="nivel_básico.pdf" target="_blank">PDF nivel básico</a> para aprender inglés con ejercicios y ejemplos prácticos.</p>
+            </details>
+            <details class="btn">
+                <summary>A2</summary>
+                <p>Descarga nuestro <a href="nivel_básico.pdf" target="_blank">PDF nivel básico</a> para aprender inglés con ejercicios y ejemplos prácticos.</p>
+            </details>
+        </div>
+        <div class="content hidden" id="videos">
+            <h2>Videos Educativos</h2>
+            <p>Aprende inglés con estos videos:</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/WS1ttVZ-K2Q" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/PeXZktbTgLo" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/jlC2l0kqocE" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2024 Aprende Inglés Fácilmente</p>
+    </footer>
+    
+    <script>
+        function showSection(section) {
+            document.getElementById('pdf').classList.add('hidden');
+            document.getElementById('videos').classList.add('hidden');
+
+            document.getElementById(section).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
